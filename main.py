@@ -7,6 +7,7 @@ from typing import Any, Literal, Optional, Annotated
 
 app = FastAPI()
 
+#Pydantic BaseModel
 class Patient(BaseModel):
     id: str = Field(
         ...,
@@ -66,6 +67,7 @@ class Patient(BaseModel):
         else:
             return 'Obese'
 
+#creating pydantic basemodel for updating patient info
 class PatientUpdate (BaseModel):
     name: Annotated [Optional [str], Field(default=None)]
     city: Annotated [Optional [str], Field(default=None)]
